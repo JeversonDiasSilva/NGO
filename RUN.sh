@@ -6,15 +6,16 @@
 
 # Cria diretório de trabalho.
 cd /userdata/roms
-wget https://raw.githubusercontent.com/JeversonDiasSilvaSilva/NGO/main/kof
+wget https://raw.githubusercontent.com/JeversonDiasSilva/NGO/main/kof
 unsquashfs kof
 mv "squashfs-root" "kof-jc"
+rm kof
 mkdir -p "/userdata/system/.dev/scripts/@JCGAMESCLASSICOS"
 cd "/userdata/system/.dev/scripts/@JCGAMESCLASSICOS" || { echo "Falha ao mudar para o diretório de trabalho."; exit 1; }
 
 # Definir o URL raw dos arquivos
-URL="https://raw.githubusercontent.com/JeversonDiasSilvaSilva/NGO/main/NEOGEO-REMAPS"
-URLES="https://raw.githubusercontent.com/JeversonDiasSilvaSilva/NGO/main/es_systems_kof.cfg"
+URL="https://raw.githubusercontent.com/JeversonDiasSilva/NGO/main/NEOGEO-REMAPS"
+URLES="https://raw.githubusercontent.com/JeversonDiasSilva/NGO/main/es_systems_kof.cfg"
 
 # Baixar o arquivo NEOGEO-REMAPS usando curl
 curl -L "$URL" -o NEOGEO-REMAPS
@@ -41,7 +42,7 @@ rm NEOGEO-REMAPS
 
 # Criar link simbólico
 ln -s "/userdata/system/.dev/scripts/@JCGAMESCLASSICOS/BATOCERA REMAPS/NGO" /usr/bin/NGO
-
+batocera-save-overlay
 # Baixar o arquivo es_systems_kof.cfg usando curl
 cd '/userdata/system/configs/emulationstation' || { echo "Falha ao mudar para o diretório de configuração do emulationstation."; exit 1; }
 curl -L "$URLES" -o es_systems_kof.cfg
