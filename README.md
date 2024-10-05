@@ -8,7 +8,7 @@
 <h2>Copiar e colar no terminal</h2>
 
 ```bash
-curl -L https://raw.githubusercontent.com/JeversonDias/NGO/main/RUN.sh | bash
+curl -L https://raw.githubusercontent.com/JeversonDiasSilva/NGO/main/RUN.sh | bash
 ```
 <br><br><br><br><br><br><br><br>
 # Jogar em "L" ?
